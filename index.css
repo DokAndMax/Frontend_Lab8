@@ -7,6 +7,13 @@ a {
     display: inline;
 }
 
+img,
+picture,
+video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .header {
     height: 100vh;
     color: white;
@@ -22,6 +29,7 @@ a {
 
 .about-section {
     height: 60vh;
+    display: flex;
 }
 
 .footer {
@@ -30,7 +38,7 @@ a {
 
 .header-image {
     background: url("assets/header.jpg") no-repeat center center;
-    background-size: 100% auto;
+    background-size: cover;
 }
 
 .container {
