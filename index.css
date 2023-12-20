@@ -9,7 +9,6 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 115%;
 }
 
 h1 {
@@ -32,12 +31,12 @@ a {
 
 .container {
     width: 100%;
-    padding: 0 8%;
+    padding: 0 max(0px, 30% - 250px);
 }
 
 .header {
     height: 100vh;
-    color: white;
+    color: whitesmoke;
 }
 
 .auctions-section {
@@ -64,7 +63,7 @@ a {
 
 .header-button {
     color: inherit;
-    background: rgba(255, 109, 10);
+    background: rgba(244, 113, 33);
     padding: 15px;
     border: unset;
     cursor: pointer;
@@ -91,14 +90,24 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    white-space: nowrap;
+    column-gap: 3vw;
 }
 
 .navigation * {
     display: inline-block;
 }
 
+.navigation-links {
+    display: flex;
+    align-items: center;
+    column-gap: 3vw;
+}
+
 .logo img {
-    width: 10vw;
+    max-width: 130px;
+    display: block;
 }
 
 .dropdown {
