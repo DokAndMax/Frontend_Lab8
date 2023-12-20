@@ -9,6 +9,7 @@ a {
 
 .header {
     height: 100vh;
+    color: white;
 }
 
 .auctions-section {
@@ -20,11 +21,11 @@ a {
 }
 
 .about-section {
-    height: 70vh;
+    height: 60vh;
 }
 
 .footer {
-    height: 70vh;
+    height: 60vh;
 }
 
 .header-image {
@@ -58,6 +59,19 @@ a {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.title p {
+    color: orange;
+    text-transform: uppercase;
+}
+
+.title h2 {
+    font-weight: normal;
+}
+
+.center-text {
+    text-align: center;
 }
 
 .dropdown-content {
