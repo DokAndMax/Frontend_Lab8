@@ -4,19 +4,18 @@
     --theme-color: rgba(244, 113, 33);
 }
 
-body {
+html {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    width: 100%;
-    font-size: 1fr;
-    padding: 0 max(20px, 30% - 250px);
+    font-size : clamp(0.75rem, min(1.5vw, 2.65vh), 1rem);
 }
 
 h1 {
-    font-size: 3em;
+    font-size : clamp(2rem, min(6.1vw, 10.6vh), 4rem);
+    line-height: 1;
 }
 
 img,
@@ -34,6 +33,11 @@ a {
     padding: 8px 0;
 }
 
+.container {
+    width: 100%;
+    padding: 0 max(20px, 30% - 250px);
+}
+
 .header {
     height: 100vh;
     color: whitesmoke;
@@ -43,11 +47,9 @@ a {
 }
 
 .overview-section {
-    height: 40vh;
 }
 
 .about-section {
-    height: 60vh;
     display: flex;
 }
 
@@ -64,8 +66,9 @@ a {
     color: inherit;
     background: var(--theme-color);
     border: unset;
-    padding: 15px;
+    padding: clamp(0.75rem, min(1.6vw, 2.65vh), 1rem);
     cursor: pointer;
+    font-size: inherit;
 }
 
 .header-title {
@@ -145,28 +148,31 @@ a {
 
 .auction-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(100%/5, 250px, 100%/3), 1fr));
     grid-auto-rows: 1fr;
-    gap: 30px;
+    gap: 3%;
 }
 
 .auction-list-card {
     position: relative;
     display: grid;
-    grid-template-rows: 60% 8fr 3fr 5fr; /* 100% - 6% = max 94% */
+
     border: medium darkgrey;
-    gap: 2%; /* 2% + 2% + 2% = 6% of all height*/
 }
 
-.auction-list img {
+.auction-list * {
+    overflow: clip;
+}
+
+.auction-list-card img {
     width: 100%;
     align-self: center;
     object-fit: scale-down;
 }
 
-.auction-list-price {
+.auction-list-card-price {
     position: absolute;
-    width: clamp(60px, 25%, 90px);
+    width: clamp(50px, 25%, 90px);
     aspect-ratio: 1;
     background-color: var(--theme-color);
     border-radius: 50%;
@@ -176,7 +182,7 @@ a {
     align-items: center;
 }
 
-.auction-list-binds-count {
+.auction-list-card-binds-count {
     float: right;
 }
 
