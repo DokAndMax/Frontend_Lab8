@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    --theme-color: rgba(244, 113, 33);
 }
 
 body {
@@ -9,6 +10,9 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    font-size: 1fr;
+    padding: 0 max(20px, 30% - 250px);
 }
 
 h1 {
@@ -27,11 +31,7 @@ a {
     color: inherit;
     text-align: center;
     text-decoration: none;
-}
-
-.container {
-    width: 100%;
-    padding: 0 max(0px, 30% - 250px);
+    padding: 8px 0;
 }
 
 .header {
@@ -40,7 +40,6 @@ a {
 }
 
 .auctions-section {
-    height: 100vh;
 }
 
 .overview-section {
@@ -63,14 +62,14 @@ a {
 
 .header-button {
     color: inherit;
-    background: rgba(244, 113, 33);
-    padding: 15px;
+    background: var(--theme-color);
     border: unset;
+    padding: 15px;
     cursor: pointer;
 }
 
 .header-title {
-    max-width: 36%;
+    max-width: 46%;
 }
 
 .header-title > * {
@@ -90,9 +89,10 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px 0;
     white-space: nowrap;
     column-gap: 3vw;
+    overflow: auto;
 }
 
 .navigation * {
@@ -145,8 +145,41 @@ a {
 
 .auction-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    grid-auto-rows: 1fr;
+    gap: 30px;
 }
+
+.auction-list-card {
+    position: relative;
+    display: grid;
+    grid-template-rows: 60% 8fr 3fr 5fr; /* 100% - 6% = max 94% */
+    border: medium darkgrey;
+    gap: 2%; /* 2% + 2% + 2% = 6% of all height*/
+}
+
+.auction-list img {
+    width: 100%;
+    align-self: center;
+    object-fit: scale-down;
+}
+
+.auction-list-price {
+    position: absolute;
+    width: clamp(60px, 25%, 90px);
+    aspect-ratio: 1;
+    background-color: var(--theme-color);
+    border-radius: 50%;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auction-list-binds-count {
+    float: right;
+}
+
 
 .orange-overlay {
     box-shadow: inset 0 0 0 50vw rgba(255, 109, 10, 0.9);
