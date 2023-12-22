@@ -32,23 +32,28 @@ a {
     padding: 8px 0;
 }
 
-.container {
-    --max-container-width: 1110px;
-    --max-padding: 205px;
-    --min-padding: 20px;
-    --reduction-rate: 30;
-    box-sizing: border-box;
-    padding: 0 max(
-            var(--min-padding),
-            max(
-                    min(
-                            calc(100% * (var(--reduction-rate) / 100) - ((var(--reduction-rate) / 100) * (var(--max-container-width) + var(--max-padding) * 2) - var(--max-padding))),
-                            var(--max-padding)
-                    ),
-                    (100% - var(--max-container-width)) / 2
-            )
-    );
-}
+    .container {
+        /* px , максимальна ширирна контейнера */
+        --max-width: 1110;
+        /* px , ширина контейнера, після досягнення якої padding починає зменшуватися */
+        --breakpoint-width: 700;
+        /* px  ширина padding, яка діє допоки ширина контейнера не стане менше ніж --min-responsive-width */
+        --initial-padding: 205;
+        /* px , мінімальна ширина padding*/
+        --min-padding: 20;
+
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0
+        max(
+                clamp(
+                        var(--min-padding) * 1px,
+                        ((100% - var(--initial-padding) * 2px) / var(--breakpoint-width)) * var(--initial-padding),
+                        var(--initial-padding) * 1px
+                ),
+                (100% - var(--max-width) * 1px) / 2
+        );
+    }
 
 .header {
     height: 100vh;
