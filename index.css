@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    --theme-color: rgba(244, 113, 33);
+    --theme-color: #f47121;
     --breakpont-vp-width: 1110;
     --breakpont-vp-heigh: 604;
     --adaptive-scale: clamp(
@@ -90,11 +90,11 @@ a {
 }
 
 .header-button {
-    color: inherit;
     background: var(--theme-color);
     border: unset;
-    padding: calc(var(--adaptive-scale));
     cursor: pointer;
+    color: inherit;
+    padding: calc(var(--adaptive-scale));
     font-size: inherit;
 }
 
@@ -119,9 +119,9 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    column-gap: min(3vw, 46px);
     padding: 20px 0;
     white-space: nowrap;
-    column-gap: min(3vw, 46px);
     overflow: auto;
 }
 
@@ -141,19 +141,19 @@ a {
 }
 
 .dropdown {
-    position: relative;
     display: inline-block;
+    position: relative;
 }
 
 .dropdown-content {
+    width: 100%;
     display: none;
     position: absolute;
-    width: 100%;
 }
 
 .dropdown-content a {
-    text-decoration: none;
     display: block;
+    text-decoration: none;
 }
 
 .dropdown:hover .dropdown-content {
@@ -185,31 +185,31 @@ a {
 }
 
 .auction-list-card {
-    position: relative;
     display: grid;
     grid-template-rows: 1fr 3rem 2.8rem 3rem;
+    position: relative;
     border: 3px solid rgba(128, 128, 128, 0.1);
     border-top: 0;
-    padding: calc(var(--adaptive-scale) * 2);
     color: inherit;
+    padding: calc(var(--adaptive-scale) * 2);
 }
 
 .auction-list-card-price {
-    position: absolute;
     width: clamp(50px, 25%, 90px);
     aspect-ratio: 1;
-    background-color: var(--theme-color);
-    border-radius: 50%;
-    color: whitesmoke;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    color: whitesmoke;
+    background-color: var(--theme-color);
+    border-radius: 50%;
 }
 
 .auction-list-card > img {
-    width: 100%;
     box-sizing: border-box;
-    padding: 0.5rem;
+    width: 100%;
+    padding: .5rem;
     align-self: center;
     object-fit: scale-down;
 }
@@ -225,15 +225,14 @@ a {
 
 .auction-list-card button {
     background: rgba(128, 128, 128, 0.1);
+    border: unset;
+    cursor: pointer;
     width: fit-content;
     height: fit-content;
-    padding: 0.6rem 1rem;
-    border: unset;
-    color: inherit;
+    padding: .6rem 1rem;
     font-size: inherit;
     white-space: nowrap;
     align-self: flex-end;
-    cursor: pointer;
 }
 
 
