@@ -19,11 +19,11 @@ html {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size : var(--adaptive-scale);
+    font-size : calc(var(--adaptive-scale) * 1.1);
 }
 
 h1 {
-    font-size : calc(var(--adaptive-scale) * 4);
+    font-size : calc(var(--adaptive-scale) * 3);
     line-height: 1;
 }
 
@@ -82,6 +82,7 @@ a {
 
 .footer {
     height: 60vh;
+    color: whitesmoke;
 }
 
 .header-image {
@@ -99,7 +100,7 @@ a {
 }
 
 .header-title {
-    width: min(41rem, 70%);
+    width: min(31rem, 70%);
 }
 
 .header-title > * {
@@ -163,6 +164,8 @@ a {
 .title > p {
     color: orange;
     text-transform: uppercase;
+    font-size: 0.7rem;
+    font-stretch: 50%;
 }
 
 .title > h2 {
@@ -175,7 +178,7 @@ a {
 
 .auction-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(100%/5, 250px, 100%/3), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(100%/5, 240px, 100%/3), 1fr));
     grid-auto-rows: 1fr;
     gap: calc(var(--adaptive-scale) * 2);
 }
@@ -188,14 +191,14 @@ a {
     display: grid;
     grid-template-rows: 1fr 3rem 2.8rem 3rem;
     position: relative;
-    border: 3px solid rgba(128, 128, 128, 0.1);
+    border: 3px solid rgba(128, 128, 128, 0.05);
     border-top: 0;
     color: inherit;
     padding: calc(var(--adaptive-scale) * 2);
 }
 
 .auction-list-card-price {
-    width: clamp(50px, 25%, 90px);
+    width: clamp(50px, 30%, 85px);
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
@@ -242,4 +245,8 @@ a {
 
 .black-overlay {
     box-shadow: inset 0 0 0 50vw rgba(130, 130, 115, 0.45);
+}
+
+.white-text {
+    color: inherit!important;
 }
