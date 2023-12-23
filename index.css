@@ -198,7 +198,7 @@ a {
 }
 
 .auction-list-card-price {
-    width: clamp(50px, 30%, 85px);
+    width: clamp(4rem, 30%, 5rem);
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
