@@ -245,9 +245,13 @@ a {
                 align-items: center;
                 margin-right: 25%;
 
-                img {
+                > img {
                     display: block;
                     height: 4.5rem;
+                }
+
+                h4 {
+                    color: var(--theme-color);
                 }
             }
         }
