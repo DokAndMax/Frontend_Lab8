@@ -8,32 +8,37 @@
 </head>
 <body>
 <div class="header container background-image">
-    <header class="header-navigation">
-        <div class="header-navigation-links">
-            <div class="header-navigation-links-logo">
-                <img src="assets/auction-logo.png" alt="Auction logo">
-            </div>
-            <a href="#" style="border-bottom: solid white;">Home</a>
-            <a href="#">Buy</a>
-            <a href="#">Sell</a>
-            <div class="dropdown">
+    <nav class="header-navigation">
+        <img src="assets/auction-logo.png" alt="Auction logo">
+
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+        <!-- NAVIGATION MENUS -->
+        <ul class="menu">
+            <li><a href="#" style="border-bottom: solid white;">Home</a></li>
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+            <li class="services">
                 <a href="#">Services</a>
-                <div class="dropdown-content">
-                    <a href="#">Service 1</a>
-                    <a href="#">Service 2</a>
-                    <a href="#">Service 3</a>
-                </div>
-            </div>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
-            <a href="#">About Us</a>
-        </div>
+                <ul class="dropdown">
+                    <li><a href="#">Service 1</a></li>
+                    <li><a href="#">Service 2</a></li>
+                    <li><a href="#">Service 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+
         <div>
             <a href="#">Sign in</a>
             /
             <a href="#">Register</a>
         </div>
-    </header>
+    </nav>
     <div class="header-title center-text vertical-center">
         <h1>The Best Place to Buy and Sell</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nihil.</p>
